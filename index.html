@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>User Manager</h1>
+    
+      <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      </nav>
+  
+  </header>
+
+  <!-- Form -->
+  <section>
+    <h2>User Form</h2>
+    <form id="userForm">
+      <input type="text" id="firstName" placeholder="First Name" required>
+      <input type="text" id="lastName" placeholder="Last Name" required>
+      <input type="email" id="email" placeholder="example@gmail.com" pattern="email">
+      <input type="text" id="phone" pattern="[0-9]{10}" placeholder="Phon Number" required>
+      <select id="language">
+        <option value="English">English</option>
+        <option value="Spanish">Hindi</option>
+      </select>
+      <button type="submit">Save</button>
+    </form>
+  </section>
+
+  <!-- Search -->
+  <section>
+    <h2>Serch User</h2>
+    <input type="text" id="search" placeholder="Search by name...">
+  </section>
+
+  <!-- Table -->
+  <section>
+    <table border ="2">
+      <thead>
+        <tr>
+          <th>First</th>
+          <th>Last</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Language</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody"></tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> User Manager</p>
+  </footer>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
