@@ -1,4 +1,3 @@
-// js/script.js
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
 let editIndex = null;
@@ -8,10 +7,8 @@ const tbody = document.getElementById("userTableBody");
 const search = document.getElementById("search");
 const yearSpan = document.getElementById("year");
 
-// Show current year
 yearSpan.textContent = new Date().getFullYear();
 
-// Render table
 function renderTable(data = users) {
   tbody.innerHTML = "";
   data.forEach((user, index) => {
@@ -31,7 +28,6 @@ function renderTable(data = users) {
   });
 }
 
-// Add/Edit user
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -41,7 +37,7 @@ form.addEventListener("submit", function (e) {
   const phone = document.getElementById("phone").value.trim();
   const language = document.getElementById("language").value;
 
-  // Validation
+  
   if (!firstName || !lastName) {
     alert("First and Last name are required");
     return;
@@ -58,9 +54,9 @@ form.addEventListener("submit", function (e) {
   const user = { firstName, lastName, email, phone, language };
 
   if (editIndex === null) {
-    users.push(user); // Add new
+    users.push(user); 
   } else {
-    users[editIndex] = user; // Update existing
+    users[editIndex] = user; 
     editIndex = null;
   }
 
@@ -69,7 +65,6 @@ form.addEventListener("submit", function (e) {
   renderTable();
 });
 
-// Edit user
 function editUser(index) {
   const user = users[index];
   document.getElementById("firstName").value = user.firstName;
@@ -80,7 +75,6 @@ function editUser(index) {
   editIndex = index;
 }
 
-// Delete user
 function deleteUser(index) {
   if (confirm("Are you sure?")) {
     users.splice(index, 1);
@@ -89,7 +83,6 @@ function deleteUser(index) {
   }
 }
 
-// Search filter
 search.addEventListener("input", function () {
   const term = search.value.toLowerCase();
   const filtered = users.filter(
@@ -100,5 +93,4 @@ search.addEventListener("input", function () {
   renderTable(filtered);
 });
 
-// Initial render
 renderTable();

@@ -9,7 +9,7 @@ header {
     align-items: center;
     border-radius: 2%;
     color: #f2f2f2;
-    background: rgb(97, 99, 102);
+    background: rgb(132, 154, 187);
     flex-wrap: wrap;
 }
 
@@ -28,18 +28,21 @@ form {
 
 
 table {
+    border: 2px  solid black;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 table th{
+    border: 2px  solid black;
     background: #86a6e0;
     padding: 10px;
     text-align: center;
 }
 
 table td {
+    border: 2px  solid black;
     padding: 10px;
     text-align: center;
 }
@@ -59,7 +62,13 @@ button.delete {
 }
 
 footer{
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2%;
+    color: #f2f2f2;
+    background: rgb(132, 154, 187);
+    flex-wrap: wrap;
     margin-top: 100%;
     padding: 0;
 }
